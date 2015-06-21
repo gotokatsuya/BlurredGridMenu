@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/blurred_view"
+            />
+
+    <com.goka.blurredgridmenu.BlurringView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/blurring_view"
+            />
+
+    <GridView
+            android:id="@+id/menu_grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:scrollbars="none"
+            android:verticalSpacing="16dp"
+            android:horizontalSpacing="16dp"
+            android:padding="16dp"
+            android:listSelector="@android:color/transparent"
+            android:layout_centerInParent="true"
+            />
+
+</RelativeLayout>

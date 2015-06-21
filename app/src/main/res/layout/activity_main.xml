@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back"
+            >
+
+        <Button
+                android:id="@+id/show_menu_button"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@android:color/white"
+                android:text="Show Menu"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_margin="16dp"
+                android:textColor="@android:color/black"/>
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+            android:id="@+id/main_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+</RelativeLayout>
