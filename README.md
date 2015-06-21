@@ -26,7 +26,7 @@ private void makeBlurConfig() {
 private void makeGridMenuFragment() {
   // This image will be blurred.
   int backgroundResourceId = ...;
-  mGridMenuFragment = GridMenuFragment.newInstance(resourceId)
+  mGridMenuFragment = GridMenuFragment.newInstance(backgroundResourceId)
   List<MenuItem> menus = new ArrayList<>();
   menus.add(new MenuItem("Home", R.drawable.home));
   ...
@@ -37,7 +37,7 @@ private void makeGridMenuFragment() {
   @Override
   public void onClickMenu(MenuItem menuItem) {
       Toast.makeText(context, menuItem.title, Toast.LENGTH_SHORT).show();
-      }
+    }
   });
 }
 ```
