@@ -1,13 +1,11 @@
 package com.goka.sample;
 
-import com.goka.blurredgridmenu.Config;
 import com.goka.blurredgridmenu.GridMenuFragment;
 import com.goka.blurredgridmenu.MenuItem;
 
-import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
@@ -42,7 +40,6 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-
         List<MenuItem> menus = new ArrayList<>();
         menus.add(new MenuItem("Home", R.drawable.home));
         menus.add(new MenuItem("Calendar", R.drawable.calendar));
@@ -52,7 +49,6 @@ public class MainActivity extends ActionBarActivity {
         menus.add(new MenuItem("Profile", R.drawable.profile));
         menus.add(new MenuItem("Timeline", R.drawable.timeline));
         menus.add(new MenuItem("Setting", R.drawable.settings));
-
 
         mGridMenuFragment.setMenu(menus);
         mGridMenuFragment.setOnClickMenuListener(new GridMenuFragment.OnClickMenuListener() {
@@ -65,7 +61,7 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-        if (0 == getSupportFragmentManager().getBackStackEntryCount()){
+        if (0 == getSupportFragmentManager().getBackStackEntryCount()) {
             super.onBackPressed();
         } else {
             getSupportFragmentManager().popBackStack();

@@ -19,6 +19,7 @@ public class GridMenuFragment extends Fragment implements AdapterView.OnItemClic
     private static final String KEY_BG_RESOURCE_ID = "key_bg_resource_id";
 
     public interface OnClickMenuListener {
+
         void onClickMenu(MenuItem menuItem);
     }
 
@@ -74,6 +75,8 @@ public class GridMenuFragment extends Fragment implements AdapterView.OnItemClic
     }
 
     private GridMenuAdapter mGridMenuAdapter;
+
     private List<MenuItem> mMenus = new ArrayList<>();
+
     private OnClickMenuListener mOnClickMenuListener;
 }

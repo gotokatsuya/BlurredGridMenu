@@ -41,7 +41,9 @@ public class GridMenuAdapter extends ArrayAdapter<MenuItem> {
     }
 
     static class Holder {
+
         TextView menuTitle;
+
         SquaredImageView menuIcon;
     }
 

@@ -24,7 +24,9 @@ public class Config {
     public static class Builder {
 
         public int mRadius = BLUR_RADIUS;
+
         public int mDownsample = DOWNSAMPLE_FACTOR;
+
         public int mOverlayColor = OVERLAY_COLOR;
 
         public Builder radius(int radius) {

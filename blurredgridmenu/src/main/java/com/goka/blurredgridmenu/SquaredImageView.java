@@ -3,7 +3,6 @@ package com.goka.blurredgridmenu;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 /**
  * Created by katsuyagoto on 2014/03/05.
