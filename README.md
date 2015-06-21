@@ -5,6 +5,12 @@ Cool grid menu.
 ![](https://github.com/gotokatsuya/BlurredGridMenu/blob/master/image.jpg)
 
 ## How to use
+
+### Enable renderscript
+renderscriptTargetApi 22
+renderscriptSupportModeEnabled true
+
+### Code
 ```java
 
 // Configuration
