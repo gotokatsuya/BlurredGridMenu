@@ -34,8 +34,8 @@ private void makeGridMenuFragment() {
   ...
   mGridMenuFragment.setMenu(menus);
   mGridMenuFragment.setOnClickMenuListener(new GridMenuFragment.OnClickMenuListener() {
-  @Override
-  public void onClickMenu(MenuItem menuItem) {
+    @Override
+    public void onClickMenu(MenuItem menuItem) {
       Toast.makeText(context, menuItem.title, Toast.LENGTH_SHORT).show();
     }
   });
