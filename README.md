@@ -1,5 +1,4 @@
 # BlurredGridMenu
-============
 Cool grid menu.
 
 ![](https://github.com/gotokatsuya/BlurredGridMenu/blob/master/image.jpg)
@@ -7,8 +6,10 @@ Cool grid menu.
 ## How to use
 
 ### Enable renderscript
-renderscriptTargetApi 22
+```
+renderscriptTargetApi 22  
 renderscriptSupportModeEnabled true
+```
 
 ### Code
 ```java
@@ -25,7 +26,7 @@ private void makeBlurConfig() {
 private void makeGridMenuFragment() {
   // This image will be blurred.
   int backgroundResourceId = ...;
-  mGridMenuFragment = GridMenuFragment.newInstance(resourceId)
+  mGridMenuFragment = GridMenuFragment.newInstance(backgroundResourceId)
   List<MenuItem> menus = new ArrayList<>();
   menus.add(new MenuItem("Home", R.drawable.home));
   ...
@@ -33,10 +34,10 @@ private void makeGridMenuFragment() {
   ...
   mGridMenuFragment.setMenu(menus);
   mGridMenuFragment.setOnClickMenuListener(new GridMenuFragment.OnClickMenuListener() {
-  @Override
-  public void onClickMenu(MenuItem menuItem) {
+    @Override
+    public void onClickMenu(MenuItem menuItem) {
       Toast.makeText(context, menuItem.title, Toast.LENGTH_SHORT).show();
-      }
+    }
   });
 }
 ```
