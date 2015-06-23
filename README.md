@@ -46,8 +46,6 @@ private void makeGridMenuFragment() {
 
 ## Gradle
 
-Caution : Not release now yet.  
-
 ```java
 repositories {
     jcenter()
