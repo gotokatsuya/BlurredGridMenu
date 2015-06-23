@@ -44,10 +44,22 @@ private void makeGridMenuFragment() {
 
 
 ## Gradle
-Comming soon
+
+Caution : Not release now yet.  
+
+```java
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.0'
+}
+```
+
 
 ## Release
-1.0
+1.0.0
 
 
 ## Blur
