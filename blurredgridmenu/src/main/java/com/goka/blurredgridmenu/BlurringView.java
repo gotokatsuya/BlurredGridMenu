@@ -13,6 +13,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 // Reference LICENSE -> https://github.com/500px/500px-android-blur/blob/master/LICENSE.txt
+// Modified by gotokatsuya
 
 /**
  * A custom view for presenting a dynamically blurred version of another view's content.
@@ -51,9 +52,9 @@ public class BlurringView extends View {
         super(context, attrs);
 
         initializeRenderScript(context);
-        setBlurRadius(Config.BLUR_RADIUS);
-        setDownsampleFactor(Config.DOWNSAMPLE_FACTOR);
-        setOverlayColor(Config.OVERLAY_COLOR);
+        setBlurRadius(BlurredGridMenuConfig.BLUR_RADIUS);
+        setDownsampleFactor(BlurredGridMenuConfig.DOWNSAMPLE_FACTOR);
+        setOverlayColor(BlurredGridMenuConfig.OVERLAY_COLOR);
     }
 
     public void setBlurredView(View blurredView) {
@@ -67,9 +68,6 @@ public class BlurringView extends View {
         if (mBlurredView != null) {
             if (prepare()) {
 
-                // If the background of the blurred view is a color drawable, we use it to clear
-                // the blurring canvas, which ensures that edges of the child views are blurred
-                // as well; otherwise we clear the blurring canvas with a transparent color.
                 if (mBlurredView.getBackground() != null && mBlurredView.getBackground() instanceof ColorDrawable) {
                     mBitmapToBlur.eraseColor(((ColorDrawable) mBlurredView.getBackground()).getColor());
                 } else {
@@ -129,7 +127,6 @@ public class BlurringView extends View {
             int scaledWidth = width / mDownsampleFactor;
             int scaledHeight = height / mDownsampleFactor;
 
-            // The following manipulation is to avoid some RenderScript artifacts at the edge.
             scaledWidth = scaledWidth - scaledWidth % 4 + 4;
             scaledHeight = scaledHeight - scaledHeight % 4 + 4;
 

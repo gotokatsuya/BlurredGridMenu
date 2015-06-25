@@ -5,7 +5,7 @@ import android.graphics.Color;
 /**
  * Created by katsuyagoto on 15/06/04.
  */
-public class Config {
+public class BlurredGridMenuConfig {
 
     public static int BLUR_RADIUS = 6;
 

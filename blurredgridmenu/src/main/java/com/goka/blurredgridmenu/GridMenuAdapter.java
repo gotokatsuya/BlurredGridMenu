@@ -10,7 +10,7 @@ import android.widget.TextView;
 /**
  * Created by katsuyagoto on 2014/06/19.
  */
-public class GridMenuAdapter extends ArrayAdapter<MenuItem> {
+public class GridMenuAdapter extends ArrayAdapter<GridMenu> {
 
     private LayoutInflater mInflater;
 
@@ -34,13 +34,14 @@ public class GridMenuAdapter extends ArrayAdapter<MenuItem> {
             holder = (Holder) convertView.getTag();
         }
 
-        holder.menuTitle.setText(getItem(position).title);
-        holder.menuIcon.setImageResource(getItem(position).icon);
+        GridMenu gridMenu = getItem(position);
+        holder.menuTitle.setText(gridMenu.getTitle());
+        holder.menuIcon.setImageResource(gridMenu.getIcon());
 
         return convertView;
     }
 
-    static class Holder {
+    public static class Holder {
 
         TextView menuTitle;
 

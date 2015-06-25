@@ -20,7 +20,8 @@
                 android:textSize="18sp"
                 android:gravity="center"
                 android:layout_margin="16dp"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black"
+                android:alpha="0.8"/>
 
     </RelativeLayout>
 

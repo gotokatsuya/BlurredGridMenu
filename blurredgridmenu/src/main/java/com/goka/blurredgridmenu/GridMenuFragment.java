@@ -18,30 +18,12 @@ public class GridMenuFragment extends Fragment implements AdapterView.OnItemClic
 
     private static final String KEY_BG_RESOURCE_ID = "key_bg_resource_id";
 
-    public interface OnClickMenuListener {
-
-        void onClickMenu(MenuItem menuItem);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        if (mOnClickMenuListener == null) {
-            throw new IllegalArgumentException("Must implement setOnClickMenuListener");
-        } else {
-            mOnClickMenuListener.onClickMenu(mMenus.get(i));
-        }
-    }
-
     public static GridMenuFragment newInstance(int backgroundResourceID) {
         GridMenuFragment gridMenuFragment = new GridMenuFragment();
         Bundle args = new Bundle();
         args.putInt(KEY_BG_RESOURCE_ID, backgroundResourceID);
         gridMenuFragment.setArguments(args);
         return gridMenuFragment;
-    }
-
-    public void setOnClickMenuListener(OnClickMenuListener listener) {
-        mOnClickMenuListener = listener;
     }
 
     @Override
@@ -70,13 +52,33 @@ public class GridMenuFragment extends Fragment implements AdapterView.OnItemClic
         return view;
     }
 
-    public void setMenu(List<MenuItem> menus) {
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if (mOnClickMenuListener == null) {
+            throw new IllegalArgumentException("Must implement setOnClickMenuListener");
+        } else {
+            mOnClickMenuListener.onClickMenu(mMenus.get(i), i);
+        }
+    }
+
+    public void setupMenu(List<GridMenu> menus) {
         this.mMenus = menus;
     }
 
     private GridMenuAdapter mGridMenuAdapter;
 
-    private List<MenuItem> mMenus = new ArrayList<>();
+    private List<GridMenu> mMenus = new ArrayList<>();
 
     private OnClickMenuListener mOnClickMenuListener;
+
+    public void setOnClickMenuListener(OnClickMenuListener listener) {
+        mOnClickMenuListener = listener;
+    }
+
+    public interface OnClickMenuListener {
+
+        void onClickMenu(GridMenu gridMenu, int position);
+    }
+
 }

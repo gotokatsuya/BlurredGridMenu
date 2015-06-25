@@ -29,6 +29,7 @@
             android:padding="16dp"
             android:listSelector="@android:color/transparent"
             android:layout_centerInParent="true"
+            android:overScrollMode="never"
             />
 
 </RelativeLayout>

@@ -14,12 +14,13 @@ renderscriptSupportModeEnabled true
 ### Code
 ```java
 
-// Configuration
+// Configuration (You can call on Application)
 private void makeBlurConfig() {
-  Config.build(new Config.Builder()
-    .radius(1)
-    .downsample(1)
-    .overlayColor(Color.parseColor("#000000")));
+  BlurredGridMenuConfig
+      .build(new BlurredGridMenuConfig.Builder()
+              .radius(1)
+              .downsample(1)
+              .overlayColor(Color.parseColor("#AA000000")));
 }
 
 // GridMenuFragment
@@ -27,17 +28,20 @@ private void makeGridMenuFragment() {
   // This image will be blurred.
   int backgroundResourceId = ...;
   mGridMenuFragment = GridMenuFragment.newInstance(backgroundResourceId)
-  List<MenuItem> menus = new ArrayList<>();
-  menus.add(new MenuItem("Home", R.drawable.home));
+
+  List<GridMenu> menus = new ArrayList<>();
+  menus.add(new GridMenu("Home", R.drawable.home));
   ...
-  menus.add(new MenuItem(.., ..))
+  menus.add(new GridMenu("Setting", R.drawable.settings));
   ...
-  mGridMenuFragment.setMenu(menus);
+  mGridMenuFragment.setupMenu(menus);
+
   mGridMenuFragment.setOnClickMenuListener(new GridMenuFragment.OnClickMenuListener() {
-    @Override
-    public void onClickMenu(MenuItem menuItem) {
-      Toast.makeText(context, menuItem.title, Toast.LENGTH_SHORT).show();
-    }
+      @Override
+      public void onClickMenu(GridMenu gridMenu, int position) {
+          Toast.makeText(context, "Title:" + gridMenu.getTitle() + ", Position:" + position,
+                          Toast.LENGTH_SHORT).show();
+      }
   });
 }
 ```
@@ -46,7 +50,7 @@ private void makeGridMenuFragment() {
 
 ## Gradle
 
-Caution : Not release now yet.  
+Caution : Not release now yet.
 
 ```java
 repositories {
@@ -54,14 +58,17 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.0'
+    compile 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.1'
 }
 ```
 
 
 ## Release
 1.0.0
+ First release.
 
+1.0.1
+ Modified some class names.
 
 ## Blur
 Reference
