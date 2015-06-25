@@ -26,6 +26,7 @@ repositories {
 }
 
 dependencies {
-    compile project(':blurredgridmenu')
+    // compile project(':blurredgridmenu')
+    compile 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.1'
     compile 'com.android.support:appcompat-v7:22.2.0'
 }
