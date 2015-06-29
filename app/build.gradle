@@ -8,8 +8,8 @@ android {
         applicationId "com.goka.sample"
         minSdkVersion 11
         targetSdkVersion 22
-        versionCode 2
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.2"
         renderscriptTargetApi 22
         renderscriptSupportModeEnabled true
     }
@@ -27,6 +27,6 @@ repositories {
 
 dependencies {
     // compile project(':blurredgridmenu')
-    compile 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.1'
+    compile 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.2'
     compile 'com.android.support:appcompat-v7:22.2.0'
 }

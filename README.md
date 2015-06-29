@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.1'
+    compile 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.2'
 }
 ```
 
@@ -67,6 +67,9 @@ dependencies {
 
 1.0.1
  Modified some class names.
+
+1.0.2
+ Delete resources we don't need.
 
 ## Blur
 Reference
