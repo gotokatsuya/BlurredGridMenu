@@ -13,13 +13,6 @@ Open the build.gradle file in the app folder of your application module.
 Add the following RenderScript settings to the file in defaultConfig:
 
 ```
-renderscriptTargetApi 22  
-renderscriptSupportModeEnabled true
-```
-
-Here is an example how it looks 
-
-```
 android {
     compileSdkVersion 23
     buildToolsVersion '23.0.2'
