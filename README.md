@@ -9,9 +9,23 @@ Cool grid menu.
 ## How to use
 
 ### Enable renderscript
+Open the build.gradle file in the app folder of your application module.
+Add the following RenderScript settings to the file in defaultConfig:
+
 ```
-renderscriptTargetApi 22  
-renderscriptSupportModeEnabled true
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 23
+
+        renderscriptTargetApi 22  
+        renderscriptSupportModeEnabled true
+
+    }
+}
 ```
 
 ### Code
